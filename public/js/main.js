@@ -1,3 +1,13 @@
+var tempoinicial = "10";
+
+$(document).ready(function () {
+  resetGame();
+  controller(tempoinicial);
+  wordsCounterTextArea();
+  setWordsNumber();
+});
+
+
 function wordsCounter() {
   var text = $(".frase").text();
   var length = text.split(" ").length;
@@ -11,7 +21,7 @@ function setWordsNumber() {
 
 function wordsCounterTextArea() {
   var text = $("#textarea");
-  text.on("input", function() {
+  text.on("input", function () {
     var value = text.val();
     var chars = chars == " " ? 0 : value.length;
     var words = value.split(/[\S]+/).length;
@@ -20,11 +30,12 @@ function wordsCounterTextArea() {
   });
 }
 
-function controller() {
+function controller(timeStart) {
+  $("#seconds").text(timeStart);
   var field = $("#textarea");
-  field.one("focus", function() {
+  field.one("focus", function () {
     var time = $("#seconds").text();
-    var pid = setInterval(function() {
+    var pid = setInterval(function () {
       time--;
       $("#seconds").text(time);
       if (time < 1) {
@@ -35,6 +46,13 @@ function controller() {
   });
 }
 
-controller();
-wordsCounterTextArea();
-setWordsNumber();
+function resetGame() {
+  $("#reset").click(function () {
+    $("#textarea").attr("disabled", false);
+    $("#textarea").val("");
+    $("#userChars").text("0");
+    $("#userWords").text("0");
+    $("#seconds").text("10");
+    controller();
+  });
+}
