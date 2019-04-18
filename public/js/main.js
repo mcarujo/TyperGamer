@@ -26,7 +26,7 @@ function controller() {
     var time = $("#seconds").text();
     var pid = setInterval(function() {
       time--;
-      console.log(time);
+      $("#seconds").text(time);
       if (time < 1) {
         $("#textarea").attr("disabled", true);
         clearInterval(pid);
