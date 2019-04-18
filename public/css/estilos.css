@@ -1,0 +1,26 @@
+.frase{
+    font-size: 20px;
+    text-align: left;
+}
+.off{
+    background-color: lightgrey;
+}
+
+.text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid 3px;
+    border-color:  black;
+}
+
+.right{
+    border-color:  green;
+}
+
+.wrong{
+    border-color:  red;
+}
+
+.icones{
+    vertical-align: middle;
+}

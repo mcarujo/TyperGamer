@@ -40,15 +40,19 @@ function controller(timeStart) {
       $("#seconds").text(time);
       if (time < 1) {
         $("#textarea").attr("disabled", true);
+        $("#textarea").toggleClass("off");
         clearInterval(pid);
       }
     }, 1000);
   });
 }
-
+function verify(){
+var frase = $(".frase").text();
+}
 function resetGame() {
   $("#reset").click(function () {
     $("#textarea").attr("disabled", false);
+    $("#textarea").toggleClass("off");
     $("#textarea").val("");
     $("#userChars").text("0");
     $("#userWords").text("0");
