@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gamer Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css" />
+    <link rel="stylesheet" href="css/libs/google-fonts.css" />
+    <link rel="stylesheet" href="css/libs/selectize.default.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Gamer Typer</title>
-  <link rel="stylesheet" href="css/libs/materialize.min.css">
-  <link rel="stylesheet" href="css/libs/google-fonts.css">
-  <link rel="stylesheet" href="css/libs/selectize.default.css">
-  <link rel="stylesheet" href="css/estilos.css">
-</head>
+  <body>
+    <div class="container">
+      <h1 class="center">Gamer Typer</h1>
+      <p class="frase center">Inicial teste de número de palavras.</p>
+      <ul class="informacoes center">
+        <li>
+          <i class="small material-icons icones">description</i>
+          <span id="length"></span> palavras
+        </li>
+        <li>
+          <i class="small material-icons icones">query_builder</i>
+          <span id="seconds"></span> segundos
+        </li>
+      </ul>
 
-<body>
-  <div class="container">
-    <h1 class="center">Gamer Typer</h1>
-    <p class="frase center">Inicial teste de número de palavras.</p>
-    <ul class="informacoes center">
-      <li>
-        <i class="small material-icons icones">description</i>
-        <span id="length"></span> palavras
-      </li>
-      <li>
-        <i class="small material-icons icones">query_builder</i>
-        <span id="seconds">10</span> segundos
-      </li>
-    </ul>
-
-    <textarea id="textarea" class="text" rows="20" cols="35"></textarea>
-    <div>
-      <a id="reset" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">refresh</i></a>
+      <textarea id="textarea" class="text" rows="20" cols="35"></textarea>
+      <div>
+        <a
+          id="reset"
+          class="btn-floating btn-large waves-effect waves-light red"
+          ><i class="material-icons">refresh</i></a
+        >
+      </div>
+      <ul class="center">
+        <li><span id="userChars">0</span> caracteres</li>
+        <li><span id="userWords">0</span> palavras</li>
+      </ul>
+      <script src="js/jquery.js"></script>
+      <script src="js/main.js"></script>
     </div>
-    <ul class="center">
-      <li><span id="userChars">0</span> caracteres</li>
-      <li><span id="userWords">0</span> palavras</li>
-    </ul>
-    <script src="js/jquery.js"></script>
-    <script src="js/main.js"></script>
-  </div>
-</body>
-
+  </body>
 </html>
