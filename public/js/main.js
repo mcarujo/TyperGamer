@@ -39,6 +39,7 @@ function controller(timeStart) {
       time--;
       $("#seconds").text(time);
       if (time < 1) {
+        insertTable();
         $("#textarea").attr("disabled", true);
         $("#textarea").toggleClass("off");
         clearInterval(pid);
@@ -60,6 +61,23 @@ function verify() {
       text.addClass("wrong");
     }
   });
+}
+
+function insertTable() {
+  var tabela = $("#lines");
+  var usuario = "Nameless";
+  var numPalavras = $("#userWords").text();
+  var linha =
+    "<tr>" +
+    "<td>" +
+    usuario +
+    "</td>" +
+    "<td>" +
+    numPalavras +
+    "</td>" +
+    "</tr>";
+  console.log(tabela);
+  tabela.prepend(linha);
 }
 
 function resetGame() {
