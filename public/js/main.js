@@ -63,20 +63,36 @@ function verify() {
   });
 }
 
+function removeLine() {
+  $(this)
+    .parent()
+    .parent()
+    .parent()
+    .remove();
+}
+
 function insertTable() {
   var tabela = $("#lines");
   var usuario = "Nameless";
   var numPalavras = $("#userWords").text();
-  var linha =
-    "<tr>" +
-    "<td>" +
-    usuario +
-    "</td>" +
-    "<td>" +
-    numPalavras +
-    "</td>" +
-    "</tr>";
-  console.log(tabela);
+
+  var linha = $("<tr>");
+  var colunaUser = $("<td>").text(usuario);
+  var colunaWord = $("<td>").text(numPalavras);
+  var colunaTrash = $("<td>");
+  var link = $("<a>")
+    .addClass("botaoremover")
+    .attr("href", "#");
+  var icone = $("<i>")
+    .addClass("small")
+    .addClass("material-icons")
+    .text("delete")
+    .click(removeLine);
+  link.append(icone);
+  colunaTrash.append(link);
+  linha.append(colunaUser);
+  linha.append(colunaWord);
+  linha.append(colunaTrash);
   tabela.prepend(linha);
 }
 
