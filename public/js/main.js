@@ -63,15 +63,15 @@ function verify() {
   });
 }
 
-function removeLine() {
-  var linha = $(this)
+function removeLine(event) {
+  event.preventDefault();
+  var $this = $(this)
     .parent()
     .parent()
     .parent();
-  setInterval(function() {
-    linha.fadeOut(1000);
-  }, 1000);
-  linha.remove();
+  $this.fadeOut(function() {
+    $this.remove();
+  });
 }
 
 function insertTable() {
