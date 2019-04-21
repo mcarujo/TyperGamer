@@ -1,26 +1,34 @@
-.frase{
-    font-size: 20px;
-    text-align: left;
+.frase {
+  font-size: 20px;
+  text-align: left;
 }
-.off{
-    background-color: lightgrey;
-}
-
-.text{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: solid 3px;
-    border-color:  black;
+.off {
+  background-color: lightgrey;
 }
 
-.right{
-    border-color:  green;
+.text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid 3px;
+  border-color: black;
 }
 
-.wrong{
-    border-color:  red;
+.right {
+  border-color: green;
 }
 
-.icones{
-    vertical-align: middle;
+.wrong {
+  border-color: red;
+}
+
+.icones {
+  vertical-align: middle;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  overflow: scroll;
 }

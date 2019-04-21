@@ -64,11 +64,14 @@ function verify() {
 }
 
 function removeLine() {
-  $(this)
+  var linha = $(this)
     .parent()
     .parent()
-    .parent()
-    .remove();
+    .parent();
+  setInterval(function() {
+    linha.fadeOut(1000);
+  }, 1000);
+  linha.remove();
 }
 
 function insertTable() {
@@ -108,5 +111,11 @@ function resetGame() {
     $("#userWords").text("0");
     $("#seconds").text(tempoinicial);
     controller();
+  });
+}
+scoreStatus();
+function scoreStatus() {
+  $("#score").on("click", function() {
+    $(".score").slideToggle(500);
   });
 }
