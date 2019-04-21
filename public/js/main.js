@@ -6,6 +6,8 @@ $(document).ready(function() {
   wordsCounterTextArea();
   setWordsNumber();
   verify();
+  changePhrase();
+  scoreStatus();
 });
 
 function wordsCounter() {
@@ -74,6 +76,24 @@ function removeLine(event) {
   });
 }
 
+function changePhrase() {
+  $("#change").on("click", function() {
+    $.get("http://localhost:3000/frases", function(data) {
+      var frase = $(".frase");
+      var segundos = $("#seconds");
+      var number = getRandomIntInclusive(0, data.length);
+      frase.text(data[number].texto);
+      segundos.text(data[number].tempo);
+    });
+  });
+}
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function insertTable() {
   var tabela = $("#lines");
   var usuario = "Nameless";
@@ -113,7 +133,7 @@ function resetGame() {
     controller();
   });
 }
-scoreStatus();
+
 function scoreStatus() {
   $("#score").on("click", function() {
     $(".score").slideToggle(500);
