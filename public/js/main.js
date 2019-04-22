@@ -81,7 +81,7 @@ function changePhrase() {
     $.get("http://localhost:3000/frases", function(data) {
       var frase = $(".frase");
       var segundos = $("#seconds");
-      var number = getRandomIntInclusive(0, data.length);
+      var number = getRandomIntInclusive(0, data.length - 1);
       frase.text(data[number].texto);
       segundos.text(data[number].tempo);
     });
