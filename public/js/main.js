@@ -8,6 +8,7 @@ $(document).ready(function() {
   verify();
   changePhrase();
   scoreStatus();
+  $("#aviso").addClass("hidden");
 });
 
 function wordsCounter() {
@@ -79,11 +80,15 @@ function removeLine(event) {
 function changePhrase() {
   $("#change").on("click", function() {
     $.get("http://localhost:3000/frases", function(data) {
+      $("#aviso").addClass("hidden");
       var frase = $(".frase");
       var segundos = $("#seconds");
       var number = getRandomIntInclusive(0, data.length - 1);
       frase.text(data[number].texto);
       segundos.text(data[number].tempo);
+    }).fail(function() {
+      console.log("HUIHUIU");
+      $("#aviso").removeClass("hidden");
     });
   });
 }
