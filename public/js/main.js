@@ -79,6 +79,8 @@ function removeLine(event) {
 
 function changePhrase() {
   $("#change").on("click", function() {
+    $("#spinner").removeClass("hidden");
+    $("#display").addClass("hidden");
     $.get("http://localhost:3000/frases", function(data) {
       $("#aviso").addClass("hidden");
       var frase = $(".frase");
@@ -86,10 +88,14 @@ function changePhrase() {
       var number = getRandomIntInclusive(0, data.length - 1);
       frase.text(data[number].texto);
       segundos.text(data[number].tempo);
-    }).fail(function() {
-      console.log("HUIHUIU");
-      $("#aviso").removeClass("hidden");
-    });
+    })
+      .fail(function() {
+        $("#aviso").removeClass("hidden");
+      })
+      .always(function() {
+        $("#spinner").addClass("hidden");
+        $("#display").removeClass("hidden");
+      });
   });
 }
 

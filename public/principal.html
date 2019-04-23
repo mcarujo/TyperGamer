@@ -10,23 +10,27 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1 class="center">Gamer Typer</h1>
-      <p class="frase center">Inicial teste de número de palavras.</p>
-      <div class="center">
-        <p id="aviso" class="erro">Ocorreu um erro, tente novamente.</p>
+    <div class="container center">
+      <h1>Gamer Typer</h1>
+        <img class="hidden" style="margin-bottom: 10px" src="img/spinner.gif" alt="Spinner" id="spinner" />
       </div>
-      <ul class="informacoes center">
-        <li>
-          <i class="small material-icons icones">description</i>
-          <span id="length"></span> palavras
-        </li>
-        <li>
-          <i class="small material-icons icones">query_builder</i>
-          <span id="seconds"></span> segundos
-        </li>
-      </ul>
-
+      <div id="display">
+        <p class="frase center">Inicial teste de número de palavras.</p>
+        <div class="center">
+          <p id="aviso" class="erro">Ocorreu um erro, tente novamente.</p>
+        </div>
+        <ul class="informacoes center">
+          <li>
+            <i class="small material-icons icones">description</i>
+            <span id="length"></span> palavras
+          </li>
+          <li>
+            <i class="small material-icons icones">query_builder</i>
+            <span id="seconds"></span> segundos
+          </li>
+        </ul>
+        
+      </div>
       <textarea id="textarea" class="text" rows="20" cols="35"></textarea>
       <div>
         <a
