@@ -1,4 +1,4 @@
-### TyperGamer
+## TyperGamer
 
 #### For use, you must go to the path 'servidor' and execute the command: `npm install`.
 
